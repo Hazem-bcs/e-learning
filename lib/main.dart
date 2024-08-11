@@ -1,3 +1,5 @@
+import 'package:elearnnig/core/theme/dark_theme.dart';
+import 'package:elearnnig/core/theme/light_theme.dart';
 import 'package:elearnnig/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       translations: MyTranslation(),
+      theme: getLightThemeData(),
+      darkTheme: getDarkThemeData(),
+      themeMode: ThemeMode.light,
       getPages: routes,
     );
   }

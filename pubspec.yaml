@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   get: ^4.6.6
   shared_preferences: ^2.2.3
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:
@@ -36,5 +37,20 @@ flutter:
 
   assets:
     - assets/images/on_boarding/onBoardingImageOne.png
+    - assets/images/on_boarding/onBoardingImageTow.png
+    - assets/images/on_boarding/onBoardingImageThree.png
+    - assets/images/on_boarding/onBoardingImageFour.png
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Black.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+        - asset: assets/fonts/Cairo-ExtraBold.ttf
+        - asset: assets/fonts/Cairo-ExtraLight.ttf
+        - asset: assets/fonts/Cairo-Light.ttf
+        - asset: assets/fonts/Cairo-Medium.ttf
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-SemiBold.ttf
 
 

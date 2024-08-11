@@ -1,69 +1,46 @@
 import 'package:flutter/material.dart';
 
 ThemeData getLightThemeData() => ThemeData(
-      appBarTheme: const AppBarTheme(
-        titleTextStyle: TextStyle(
-          fontSize: 17,
-          fontFamily: "Cairo",
-          fontWeight: FontWeight.bold,
-        ),
-        iconTheme: IconThemeData(
-          color: Colors.white,
-          size: 22,
-        ),
-      ),
-      scaffoldBackgroundColor: const Color(0x163978FF),
+      appBarTheme: const AppBarTheme(),
       colorScheme: const ColorScheme.light(
-        primary: Colors.orange,
+        primary: Color(0xFF0E74BC),
         onPrimary: Colors.white,
-        secondary: Colors.black,
-        onSecondary: Colors.orange,
-        surface: Colors.white,
-        onSurface: Colors.black,
+        secondary: Colors.white,
+        onSecondary: Color(0xFF0E74BC),
       ),
       textTheme: TextTheme(
         titleLarge: const TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            fontFamily: "Cairo",
-            shadows: [
-              BoxShadow(offset: Offset(1, 2)),
-            ],
-            color: Colors.white),
-        titleMedium: const TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.bold,
+          fontSize: 28,
           fontFamily: "Cairo",
-          color: Colors.white,
-          shadows: [
-            BoxShadow(offset: Offset(1, 2)),
-          ],
+          fontWeight: FontWeight.bold,
+          color: Color(0xFF0E74BC),
+        ),
+        titleMedium: const TextStyle(
+          fontSize: 28,
+          fontFamily: "Cairo",
+          fontWeight: FontWeight.bold,
+          color: Color(0xFF0E74BC),
         ),
         titleSmall: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            fontFamily: "Cairo",
-            shadows: [
-              BoxShadow(offset: Offset(1, 2)),
-            ],
-            color: Colors.white),
-        bodyLarge: const TextStyle(
-          fontSize: 20,
+          fontSize: 28,
           fontFamily: "Cairo",
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Color(0xFF0E74BC),
+        ),
+        bodyLarge: const TextStyle(
+          fontSize: 28,
+          fontFamily: "Cairo",
+          color: Color(0xFF6C6C6C),
         ),
         bodyMedium: const TextStyle(
           fontSize: 16,
           fontFamily: "Cairo",
-          fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: Color(0xFF6C6C6C),
         ),
         bodySmall: const TextStyle(
           fontSize: 14,
           fontFamily: "Cairo",
-          color: Colors.white70,
-          fontWeight: FontWeight.bold,
+          color: Color(0xFF6C6C6C),
         ),
         labelLarge: const TextStyle(
           fontSize: 18,
@@ -72,8 +49,7 @@ ThemeData getLightThemeData() => ThemeData(
           color: Colors.white,
         ),
         labelMedium: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
+          fontSize: 18,
           fontFamily: "Cairo",
           color: Colors.white,
         ),
@@ -125,22 +101,10 @@ ThemeData getLightThemeData() => ThemeData(
               ),
             ]),
       ),
-      iconTheme: const IconThemeData(
-        size: 25,
-        color: Colors.white,
-      ),
-      listTileTheme: const ListTileThemeData(
-        iconColor: Colors.white,
-      ),
-      navigationBarTheme: const NavigationBarThemeData(
-        iconTheme: WidgetStatePropertyAll(
-          IconThemeData(color: Colors.white, size: 25),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ButtonStyle(
+          backgroundColor: const WidgetStatePropertyAll(Color(0xFF0E74BC)),
         ),
-        labelTextStyle: WidgetStatePropertyAll(
-          TextStyle(color: Colors.white70, fontFamily: 'Roboto'),
-        ),
-        backgroundColor: Colors.transparent,
-        height: 60,
       ),
       fontFamily: "Cairo",
     );
