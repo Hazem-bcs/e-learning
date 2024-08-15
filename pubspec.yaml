@@ -16,6 +16,8 @@ dependencies:
   get: ^4.6.6
   shared_preferences: ^2.2.3
   animated_text_kit: ^4.2.2
+  flutter_svg: ^2.0.10+1
+  flutter_otp_text_field: ^1.1.3+2
 
 dev_dependencies:
   flutter_test:
@@ -36,10 +38,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/on_boarding/onBoardingImageOne.png
-    - assets/images/on_boarding/onBoardingImageTow.png
-    - assets/images/on_boarding/onBoardingImageThree.png
-    - assets/images/on_boarding/onBoardingImageFour.png
+    - assets/images/on_boarding/
+    - assets/images/auth/
 
   fonts:
     - family: Cairo

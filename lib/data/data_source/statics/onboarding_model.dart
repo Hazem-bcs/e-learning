@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:elearnnig/data/data_source/statics/images.dart';
 
-import '../../model/onboarding/onboardingImageModel.dart';
+import '../../model/onboarding/onboarding_image_model.dart';
 import '../../model/onboarding/onboarding_model.dart';
 import '../../model/onboarding/title_onboarding_model.dart';
 

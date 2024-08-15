@@ -101,9 +101,9 @@ ThemeData getLightThemeData() => ThemeData(
               ),
             ]),
       ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
+      elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: const WidgetStatePropertyAll(Color(0xFF0E74BC)),
+          backgroundColor: WidgetStatePropertyAll(Color(0xFF0E74BC)),
         ),
       ),
       fontFamily: "Cairo",

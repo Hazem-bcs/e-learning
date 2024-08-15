@@ -1,6 +1,4 @@
-import 'package:elearnnig/controller/onboarding_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SkipButtonWidget extends StatelessWidget {
   const SkipButtonWidget({
@@ -10,7 +8,6 @@ class SkipButtonWidget extends StatelessWidget {
   final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
-    OnboardingControllerImp controllerImp = Get.find();
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [

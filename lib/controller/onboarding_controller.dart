@@ -21,7 +21,7 @@ class OnboardingControllerImp extends OnboardingController {
       _counter = value;
       update();
     } else {
-      Get.toNamed(AppRoutes.loginScreen);
+      Get.toNamed(AppRoutes.signupScreen);
     }
   }
 
@@ -36,7 +36,7 @@ class OnboardingControllerImp extends OnboardingController {
       animationController.forward(from: 0.0);
       update();
     } else {
-      Get.toNamed(AppRoutes.loginScreen);
+      Get.toNamed(AppRoutes.signupScreen);
     }
   }
 
