@@ -1,26 +1,28 @@
 import 'package:elearnnig/controller/auth/signup_controller.dart';
 import 'package:elearnnig/core/ui_components/info_widget.dart';
+import 'package:elearnnig/view/widget/my_indicator_widget.dart';
 import 'package:elearnnig/view/widget/on_boarding_widgets/bottom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../controller/auth/signup_with_email_controller.dart';
 import '../../../core/function/validator.dart';
 import '../../widget/auth/alreadywidget.dart';
 import '../../widget/auth/blue_edges_widget.dart';
 import '../../widget/auth/custom_text_field.dart';
 import '../../widget/auth/divider_or_widget.dart';
 import '../../widget/auth/titlewidget.dart';
-import '../../widget/my_indicator_widget.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+class SignupWithEmail extends StatelessWidget {
+  const SignupWithEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final SignupControllerImp controllerImp = Get.put(SignupControllerImp());
+    final SignupWithEmailControllerImp controllerImp =
+        Get.put(SignupWithEmailControllerImp());
     return SafeArea(
       child: Scaffold(
-        body: GetBuilder<SignupControllerImp>(
+        body: GetBuilder<SignupWithEmailControllerImp>(
             builder: (controller) => Stack(
                   children: [
                     InfoWidget(builder: (context, deviceInfo) {
@@ -33,7 +35,7 @@ class SignupScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 21.0),
                           child: ListView(
                             children: [
-                              const SizedBox(height: 30),
+                              const SizedBox(height: 40),
                               const Center(
                                 child: TitleWidget(
                                   text: "Welcome!",
@@ -63,20 +65,20 @@ class SignupScreen extends StatelessWidget {
                                     ),
                                     const SizedBox(height: 20),
                                     CustomTextField(
-                                      controller: controllerImp.phoneController,
-                                      image: 'assets/images/auth/phone.png',
-                                      keyboardType: TextInputType.phone,
-                                      labelText: 'phone',
+                                      controller: controllerImp.emailController,
+                                      image: 'assets/images/auth/email.png',
+                                      keyboardType: TextInputType.emailAddress,
+                                      labelText: 'Email Address',
                                       validator: (val) {
                                         return validator(
                                             val: val!,
                                             min: 4,
-                                            max: 50,
-                                            type: "phone");
+                                            max: 100,
+                                            type: "email");
                                       },
                                     ),
                                     const SizedBox(height: 20),
-                                    GetBuilder<SignupControllerImp>(
+                                    GetBuilder<SignupWithEmailControllerImp>(
                                       builder: (controller) => CustomTextField(
                                         controller:
                                             controllerImp.passwordController,
@@ -97,7 +99,7 @@ class SignupScreen extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(height: 20),
-                                    GetBuilder<SignupControllerImp>(
+                                    GetBuilder<SignupWithEmailControllerImp>(
                                       builder: (controller) => CustomTextField(
                                         controller: controllerImp
                                             .confirmPasswordController,
@@ -124,7 +126,7 @@ class SignupScreen extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              const SizedBox(height: 25),
+                              const SizedBox(height: 30),
                               BottomButtonWidget(
                                 text: "Continue",
                                 color: Theme.of(context).colorScheme.primary,
@@ -135,34 +137,11 @@ class SignupScreen extends StatelessWidget {
                               const SizedBox(height: 10),
                               AlreadyWidget(
                                 text: 'Sign Up With ',
-                                text2: 'email?',
+                                text2: 'phone?',
                                 onPressed: () =>
-                                    controllerImp.goToSignupWithEmail(),
+                                    controllerImp.goToSignupWithPhone(),
                               ),
-                              const SizedBox(height: 15),
-                              const DividerOrWidget(),
-                              const SizedBox(height: 25),
-                              BottomButtonWidget(
-                                showImage: true,
-                                image: 'assets/images/auth/google.png',
-                                text: "   Sign Up with Google",
-                                color: Theme.of(context).colorScheme.secondary,
-                                width: 320,
-                                textColor: Colors.black54,
-                                onPressed: () => print,
-                              ),
-                              const SizedBox(height: 20),
-                              BottomButtonWidget(
-                                showImage: true,
-                                image: 'assets/images/auth/facebook.png',
-                                text: "   Sign Up with facebook",
-                                color: Theme.of(context).colorScheme.primary,
-                                width: 320,
-                                textColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                onPressed: () => print,
-                              ),
-                              const SizedBox(height: 10),
+                              const SizedBox(height: 40),
                               AlreadyWidget(
                                 text: 'Already have an account?',
                                 text2: 'Login Now',
@@ -174,9 +153,7 @@ class SignupScreen extends StatelessWidget {
                         ),
                       );
                     }),
-                    if (controllerImp.isLoading) ...[
-                      const MyIndicatorWidget(),
-                    ]
+                    if (controllerImp.indicator) ...[const MyIndicatorWidget()]
                   ],
                 )),
       ),

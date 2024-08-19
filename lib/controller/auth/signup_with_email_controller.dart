@@ -7,25 +7,25 @@ import '../../core/enums/handle_error/student/insert_error_type.dart';
 import '../../core/function/handle_error/deal_with_error/student/insert_error.dart';
 import '../../data/model/student.dart';
 
-abstract class SignupController extends GetxController {
+abstract class SignupWithEmailController extends GetxController {
   changeObscureText();
 
   changeObscureText2();
 
   signUp();
 
-  goToSignupWithEmail();
+  goToSignupWithPhone();
 
   goToLoginScreen();
 
-  changeIsLoading();
+  changeIndicator();
 }
 
-class SignupControllerImp extends SignupController {
+class SignupWithEmailControllerImp extends SignupWithEmailController {
   // define Controllers for get the values
   final formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();
-  final phoneController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   // this tow var for eye icons in TextField
@@ -36,12 +36,12 @@ class SignupControllerImp extends SignupController {
   // to call function insert student
   final InsertStudent insertStudent = InsertStudent();
   // indicator var
-  bool isLoading = false;
+  bool indicator = false;
 
-  // for show this indicator
+// for show this indicator
   @override
-  void changeIsLoading() {
-    isLoading = !isLoading;
+  void changeIndicator() {
+    indicator = !indicator;
     update();
   }
 
@@ -61,14 +61,16 @@ class SignupControllerImp extends SignupController {
   @override
   signUp() async {
     if (formKey.currentState!.validate()) {
-      changeIsLoading();
+      // turn on the indicator
+      changeIndicator();
       final Student student = Student(
           name: nameController.value.text,
-          phone: phoneController.value.text,
+          email: emailController.value.text,
           password: passwordController.value.text);
       insertStudentError = await insertStudent.insertStudent(student);
-      handleInsertError(insertStudentError, phoneController.value.text);
-      changeIsLoading();
+      handleInsertError(insertStudentError, emailController.value.text);
+      // turn off the indicator
+      changeIndicator();
     }
   }
 
@@ -81,13 +83,14 @@ class SignupControllerImp extends SignupController {
   void dispose() {
     // Dispose controllers to prevent memory leaks
     nameController.dispose();
+    emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
     super.dispose();
   }
 
   @override
-  goToSignupWithEmail() {
-    Get.offNamed(AppRoutes.signupScreenWithEmail);
+  goToSignupWithPhone() {
+    Get.offNamed(AppRoutes.signupScreen);
   }
 }

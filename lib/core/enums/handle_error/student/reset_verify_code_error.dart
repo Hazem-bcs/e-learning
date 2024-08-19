@@ -1,0 +1,4 @@
+enum ResetVerifyCodeError {
+  verificationCodeResetSuccessfully,
+  verificationCodeResetFailed,
+}

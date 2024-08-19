@@ -3,12 +3,21 @@ import 'package:elearnnig/core/theme/light_theme.dart';
 import 'package:elearnnig/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'core/localization/translation.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://hchjrzrvbnzlyidyjbev.supabase.co',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhjaGpyenJ2Ym56bHlpZHlqYmV2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjMzMzMwMzIsImV4cCI6MjAzODkwOTAzMn0.lwZUOrRyCzpxbri93HWuZ-Rf-trKdMB4-HNsSur-Yvs',
+  );
   runApp(const MyApp());
 }
+
+final supabase = Supabase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
