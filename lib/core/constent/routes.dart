@@ -10,5 +10,6 @@ class AppRoutes {
   static const String verificationScreen = "/verificationScreen";
   static const String helpCenterScreen = "/helpCenterScreen";
 // ----------------    home    ----------------
+  static const String colleagueScreen = "/colleagueScreen";
   static const String homePageScreen = "/homePageScreen";
 }

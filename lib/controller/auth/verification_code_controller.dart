@@ -1,5 +1,4 @@
 import 'package:elearnnig/core/function/handle_error/deal_with_error/verify_code/verify_code_handle.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../core/function/handle_error/deal_with_error/verify_code/handle_update_verify_code.dart';

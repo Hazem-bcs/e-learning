@@ -1,8 +1,5 @@
-import 'package:elearnnig/core/enums/handle_error/student/insert_error_type.dart';
 import 'package:elearnnig/data/model/student/login_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
-import '../../../../core/function/handle_error/parse_error/student/return_insert_error_type.dart';
 import '../../../model/student.dart';
 
 class LoginStudent {
@@ -13,9 +10,9 @@ class LoginStudent {
     final response = await supabase.rpc("verify_user_credentials", params: {
       'p_contact': student.phone,
       'p_password': student.password,
-      'p_remember_me': false
+      'p_remember_me': rememberMe
     });
-    loginModel.fromJsonToModel(response);
+    loginModel.fromJsonToModel(response, rememberMe);
     return loginModel;
   }
 }

@@ -6,9 +6,11 @@ import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'core/localization/translation.dart';
+import 'core/services/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initialServices();
   await Supabase.initialize(
     url: 'https://hchjrzrvbnzlyidyjbev.supabase.co',
     anonKey:

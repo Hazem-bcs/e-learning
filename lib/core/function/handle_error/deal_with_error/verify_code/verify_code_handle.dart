@@ -1,3 +1,4 @@
+import 'package:elearnnig/core/services/services.dart';
 import 'package:get/get.dart';
 
 import '../../../../../data/model/verify/verify_model.dart';
@@ -12,8 +13,10 @@ void verifyCodeHandle(VerifyModel verifyModel, bool goToRestScreen) {
         Get.offAllNamed(AppRoutes.restPasswordScreen,
             arguments: verifyModel.studentId.toString());
       } else {
-        Get.offAllNamed(AppRoutes.homePageScreen,
-            arguments: verifyModel.studentId);
+        MyServices myServices = Get.find();
+        myServices.loginSharedPreferences
+            .setString("studentId", "${verifyModel.studentId}");
+        Get.offAllNamed(AppRoutes.colleagueScreen);
       }
       break;
     case VerificationStatus.verificationCodeExpired:

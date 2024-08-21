@@ -2,8 +2,6 @@ import 'package:elearnnig/controller/auth/login_controller.dart';
 import 'package:elearnnig/view/widget/my_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 import '../../../core/function/auth/correct_info.dart';
 import '../../../core/function/validator.dart';
@@ -13,7 +11,6 @@ import '../../widget/auth/blue_edges_widget.dart';
 import '../../widget/auth/custom_text_field.dart';
 import '../../widget/auth/divider_or_widget.dart';
 import '../../widget/auth/remember_me_widget.dart';
-import '../../widget/auth/titlewidget.dart';
 import '../../widget/on_boarding_widgets/bottom_button_widget.dart';
 
 class LoginScreen extends StatelessWidget {

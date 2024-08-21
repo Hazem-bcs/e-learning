@@ -4,16 +4,20 @@ import 'package:elearnnig/data/model/onboarding/onboarding_model.dart';
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
 
+import '../core/services/services.dart';
+
 abstract class OnboardingController extends GetxController
     with GetTickerProviderStateMixin {
   incrementCounter();
   decrementCounter();
+  skip();
 }
 
 class OnboardingControllerImp extends OnboardingController {
   int _counter = -1;
   late AnimationController animationController;
-
+  // get MyService to change visit bool
+  MyServices myServices = Get.find();
   int get counter => _counter;
 
   set counter(int value) {
@@ -36,6 +40,7 @@ class OnboardingControllerImp extends OnboardingController {
       animationController.forward(from: 0.0);
       update();
     } else {
+      myServices.onBoardingSharedPreferences.setString("onBoarding", "true");
       Get.toNamed(AppRoutes.signupScreen);
     }
   }
@@ -62,5 +67,11 @@ class OnboardingControllerImp extends OnboardingController {
   void onClose() {
     animationController.dispose();
     super.onClose();
+  }
+
+  @override
+  skip() {
+    counter = listOnboardings.length;
+    myServices.onBoardingSharedPreferences.setString("onBoarding", "true");
   }
 }

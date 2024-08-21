@@ -2,8 +2,6 @@ import 'package:elearnnig/controller/auth/rest_password_controller.dart';
 import 'package:elearnnig/view/widget/my_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 import '../../../core/function/validator.dart';
 import '../../../core/ui_components/info_widget.dart';

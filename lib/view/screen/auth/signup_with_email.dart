@@ -1,4 +1,3 @@
-import 'package:elearnnig/controller/auth/signup_controller.dart';
 import 'package:elearnnig/core/ui_components/info_widget.dart';
 import 'package:elearnnig/view/widget/my_indicator_widget.dart';
 import 'package:elearnnig/view/widget/on_boarding_widgets/bottom_button_widget.dart';
@@ -10,7 +9,6 @@ import '../../../core/function/validator.dart';
 import '../../widget/auth/alreadywidget.dart';
 import '../../widget/auth/blue_edges_widget.dart';
 import '../../widget/auth/custom_text_field.dart';
-import '../../widget/auth/divider_or_widget.dart';
 import '../../widget/auth/titlewidget.dart';
 
 class SignupWithEmail extends StatelessWidget {

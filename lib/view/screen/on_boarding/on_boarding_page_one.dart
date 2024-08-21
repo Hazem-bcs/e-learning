@@ -28,7 +28,7 @@ class OnBoardingPageOne extends StatelessWidget {
               ),
               if (controllerImp.counter != list.length) ...[
                 SkipButtonWidget(
-                  onPressed: () => controllerImp.counter = list.length,
+                  onPressed: () => controller.skip(),
                 )
               ],
               const SizedBox(

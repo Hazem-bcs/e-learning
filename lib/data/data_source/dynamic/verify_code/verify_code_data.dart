@@ -1,8 +1,6 @@
-import 'package:elearnnig/core/enums/handle_error/student/verify_code_error.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../../core/enums/handle_error/verify_code/verify_code.dart';
-import '../../../../core/function/handle_error/parse_error/verify_code/verify_code_parse.dart';
 import '../../../model/verify/verify_model.dart';
 
 class VerifyCodeData {

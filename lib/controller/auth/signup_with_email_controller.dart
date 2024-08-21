@@ -76,7 +76,7 @@ class SignupWithEmailControllerImp extends SignupWithEmailController {
 
   @override
   goToLoginScreen() {
-    Get.toNamed(AppRoutes.loginScreen);
+    Get.offNamed(AppRoutes.loginScreen);
   }
 
   @override
