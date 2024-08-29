@@ -11,5 +11,12 @@ class AppRoutes {
   static const String helpCenterScreen = "/helpCenterScreen";
 // ----------------    home    ----------------
   static const String colleagueScreen = "/colleagueScreen";
-  static const String homePageScreen = "/homePageScreen";
+  static const String homeScreen = "/homePageScreen";
+  static const String settingScreen = "/settingScreen";
+  static const String notificationScreen = "/notificationScreen";
+  static const String profileScreen = "/profileScreen";
+  //  ------------- search section --------------
+
+  static const String searchScreen = "/searchScreen";
+  static const String filterScreen = "/filterScreen";
 }

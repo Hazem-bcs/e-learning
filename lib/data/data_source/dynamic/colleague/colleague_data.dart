@@ -6,6 +6,6 @@ class ColleagueData {
 
   Future<List<ColleagueModel>> getListColleagueData() async {
     final response = await supabase.rpc("get_colleagues");
-    return ColleagueModel.fromJsonList(response);
+    return ColleagueModel.fromJsonToModel(response);
   }
 }

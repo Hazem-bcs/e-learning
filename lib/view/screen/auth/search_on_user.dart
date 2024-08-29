@@ -1,5 +1,5 @@
 import 'package:elearnnig/core/function/auth/correct_info.dart';
-import 'package:elearnnig/view/widget/my_indicator_widget.dart';
+import 'package:elearnnig/view/widget/auth/auth_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -89,7 +89,7 @@ class SearchOnUser extends StatelessWidget {
                   ),
                 );
               }),
-              if (controllerImp.isLoading) ...[const MyIndicatorWidget()]
+              if (controllerImp.isLoading) ...[const AuthIndicatorWidget()]
             ],
           ),
         ),

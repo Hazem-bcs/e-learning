@@ -9,7 +9,7 @@ class ColleagueModel {
     this.image,
   });
 
-  static List<ColleagueModel> fromJsonList(List<dynamic> response) {
+  static List<ColleagueModel> fromJsonToModel(List<dynamic> response) {
     return response.map((data) {
       return ColleagueModel(
         colleagueId: data['colleague_id'],

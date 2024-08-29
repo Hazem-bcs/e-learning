@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'binding.dart';
 import 'core/localization/translation.dart';
 import 'core/services/services.dart';
 
@@ -19,8 +20,6 @@ void main() async {
   runApp(const MyApp());
 }
 
-final supabase = Supabase.instance.client;
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -32,6 +31,7 @@ class MyApp extends StatelessWidget {
       theme: getLightThemeData(),
       darkTheme: getDarkThemeData(),
       themeMode: ThemeMode.light,
+      initialBinding: MyBinding(),
       getPages: routes,
     );
   }

@@ -9,8 +9,13 @@ import 'package:elearnnig/view/screen/auth/signup_screen.dart';
 import 'package:elearnnig/view/screen/auth/signup_with_email.dart';
 import 'package:elearnnig/view/screen/auth/verification_screen.dart';
 import 'package:elearnnig/view/screen/home/colleague_screen.dart';
-import 'package:elearnnig/view/screen/home/home_page.dart';
+import 'package:elearnnig/view/screen/home/home_screen.dart';
+import 'package:elearnnig/view/screen/notification_screen.dart';
 import 'package:elearnnig/view/screen/on_boarding/on_boarding_page_one.dart';
+import 'package:elearnnig/view/screen/profile/profile_screen.dart';
+import 'package:elearnnig/view/screen/search/filter_screen.dart';
+import 'package:elearnnig/view/screen/search/search_screen.dart';
+import 'package:elearnnig/view/screen/setting/setting_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
@@ -18,12 +23,9 @@ import 'core/middleware/login_middleware.dart';
 
 List<GetPage> routes = [
   GetPage(
-      name: '/',
-      page: () => const OnBoardingPageOne(),
-      middlewares: [OnBoardingMiddleware()]),
-  GetPage(
     name: '/',
-    page: () => const SignupWithEmail(),
+    page: () => const OnBoardingPageOne(),
+    middlewares: [OnBoardingMiddleware()],
   ),
   GetPage(
     name: AppRoutes.signupScreen,
@@ -55,12 +57,32 @@ List<GetPage> routes = [
   ),
   // ---------------------
   GetPage(
-    name: AppRoutes.colleagueScreen,
-    page: () => const ColleagueScreen(),
-    middlewares: [ColleagueMiddleware()]
-  ),
+      name: AppRoutes.colleagueScreen,
+      page: () => const ColleagueScreen(),
+      middlewares: [ColleagueMiddleware()]),
   GetPage(
-      name: AppRoutes.homePageScreen,
+      name: AppRoutes.homeScreen,
       page: () => const HomeScreen(),
       transition: Transition.fadeIn),
+  GetPage(
+      name: AppRoutes.settingScreen,
+      page: () => const SettingScreen(),
+      transition: Transition.fadeIn),
+  GetPage(
+      name: AppRoutes.notificationScreen,
+      page: () => const NotificationScreen(),
+      transition: Transition.fadeIn),
+  GetPage(
+      name: AppRoutes.profileScreen,
+      page: () => const ProfileScreen(),
+      transition: Transition.fadeIn),
+  //  ------------- search section --------------
+  GetPage(
+      name: AppRoutes.searchScreen,
+      page: () => const SearchScreen(),
+      transition: Transition.fadeIn),
+  GetPage(
+    name: AppRoutes.filterScreen,
+    page: () => const FilterScreen(),
+  ),
 ];

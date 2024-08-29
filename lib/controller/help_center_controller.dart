@@ -14,6 +14,6 @@ class HelpCenterControllerImp extends HelpCenterController {
 
   @override
   send() {
-    if (formKey.currentState!.validate()) print("object");
+    // if (formKey.currentState!.validate())
   }
 }

@@ -12,14 +12,6 @@ ThemeData getDarkThemeData() => ThemeData(
           size: 22,
         ),
         backgroundColor: Color(0XFF262626),
-        /*
-      Color MainColor = Color(0XFFF4C750);
-      Color PrimaryColor = Color(0XFF1E1E1E);
-      Color SecondaryColor = Color(0XFF2C2C2C);
-      Color tColor = Color(0XFF161616);
-      Color iconBack = Color(0XFF262626);
-
-     */
       ),
       scaffoldBackgroundColor: const Color(0XFF262626),
       colorScheme: const ColorScheme.dark(

@@ -1,5 +1,5 @@
 import 'package:elearnnig/controller/auth/rest_password_controller.dart';
-import 'package:elearnnig/view/widget/my_indicator_widget.dart';
+import 'package:elearnnig/view/widget/auth/auth_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -67,7 +67,7 @@ class RestPasswordScreen extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Password',
                                         obscureText: controllerImp.obscureText,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText(),
                                         validator: (val) {
                                           return validator(
@@ -88,7 +88,7 @@ class RestPasswordScreen extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Confirm Password',
                                         obscureText: controllerImp.obscureText2,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText2(),
                                         validator: (val) {
                                           return validator(
@@ -122,7 +122,7 @@ class RestPasswordScreen extends StatelessWidget {
                   ),
                 );
               }),
-              if (controllerImp.isLoading) ...[const MyIndicatorWidget()]
+              if (controllerImp.isLoading) ...[const AuthIndicatorWidget()]
             ],
           ),
         ),

@@ -1,70 +1,71 @@
+import 'package:elearnnig/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 
 ThemeData getLightThemeData() => ThemeData(
       appBarTheme: const AppBarTheme(),
-      colorScheme: const ColorScheme.light(
-        primary: Color(0xFF0E74BC),
-        onPrimary: Colors.white,
-        secondary: Colors.white,
-        onSecondary: Color(0xFF0E74BC),
+      colorScheme: ColorScheme.light(
+        primary: AppColor.primaryColor,
+        onPrimary: AppColor.onPrimaryColor,
+        secondary: AppColor.secondaryColor,
+        onSecondary: AppColor.onSecondaryColor,
       ),
       textTheme: TextTheme(
-        titleLarge: const TextStyle(
+        titleLarge: TextStyle(
           fontSize: 28,
           fontFamily: "Cairo",
           fontWeight: FontWeight.bold,
-          color: Color(0xFF0E74BC),
+          color: AppColor.primaryColor,
         ),
-        titleMedium: const TextStyle(
-          fontSize: 28,
+        titleMedium: TextStyle(
+          fontSize: 24,
           fontFamily: "Cairo",
           fontWeight: FontWeight.bold,
-          color: Color(0xFF0E74BC),
+          color: AppColor.primaryColor,
         ),
-        titleSmall: const TextStyle(
-          fontSize: 28,
+        titleSmall: TextStyle(
+          fontSize: 20,
           fontFamily: "Cairo",
           fontWeight: FontWeight.bold,
-          color: Color(0xFF0E74BC),
+          color: AppColor.primaryColor,
         ),
-        bodyLarge: const TextStyle(
+        bodyLarge: TextStyle(
           fontSize: 28,
           fontFamily: "Cairo",
-          color: Color(0xFF6C6C6C),
+          color: AppColor.greyColor,
         ),
-        bodyMedium: const TextStyle(
+        bodyMedium: TextStyle(
           fontSize: 16,
           fontFamily: "Cairo",
-          color: Color(0xFF6C6C6C),
+          color: AppColor.greyColor,
         ),
-        bodySmall: const TextStyle(
+        bodySmall: TextStyle(
           fontSize: 14,
           fontFamily: "Cairo",
-          color: Color(0xFF6C6C6C),
+          color: AppColor.greyColor,
         ),
-        labelLarge: const TextStyle(
+        labelLarge: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.bold,
           fontFamily: "Cairo",
-          color: Colors.white,
+          color: AppColor.secondaryColor,
         ),
-        labelMedium: const TextStyle(
+        labelMedium: TextStyle(
           fontSize: 18,
           fontFamily: "Cairo",
-          color: Colors.white,
+          color: AppColor.secondaryColor,
         ),
-        labelSmall: const TextStyle(
+        labelSmall: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.bold,
           fontFamily: "Cairo",
-          color: Colors.white70,
+          color: AppColor.secondaryColor,
         ),
         displayLarge: TextStyle(
             letterSpacing: 1,
             fontSize: 28,
             fontWeight: FontWeight.bold,
             fontFamily: "Cairo",
-            color: Colors.black,
+            color: AppColor.secondaryColor,
             shadows: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.3),

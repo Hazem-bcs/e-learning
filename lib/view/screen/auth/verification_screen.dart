@@ -2,7 +2,7 @@ import 'package:elearnnig/controller/auth/verification_code_controller.dart';
 import 'package:elearnnig/core/function/my_snack_bar.dart';
 import 'package:elearnnig/core/ui_components/info_widget.dart';
 import 'package:elearnnig/view/widget/auth/alreadywidget.dart';
-import 'package:elearnnig/view/widget/my_indicator_widget.dart';
+import 'package:elearnnig/view/widget/auth/auth_indicator_widget.dart';
 import 'package:elearnnig/view/widget/on_boarding_widgets/bottom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -71,7 +71,7 @@ class VerificationScreen extends StatelessWidget {
               ]),
             ),
             if (controllerImp.isLoading) ...[
-              const MyIndicatorWidget(),
+              const AuthIndicatorWidget(),
             ]
           ]),
         ),

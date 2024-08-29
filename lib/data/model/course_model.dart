@@ -1,3 +1,5 @@
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
+
 class CourseModel {
   int? courseId;
   String? createAt;
@@ -11,7 +13,7 @@ class CourseModel {
   int? price;
   String? instructorName;
   String? instructorImage;
-  bool? isFavorite;
+  RxBool? isFavorite;
 
   CourseModel(
       {this.courseId,
@@ -44,7 +46,7 @@ class CourseModel {
         instructorId: response[i]['instructor_id'],
         instructorName: response[i]['instructor_name'],
         instructorImage: response[i]['instructor_image'],
-        isFavorite: response[i]['is_favorite'],
+        isFavorite: (response[i]['is_favorite'] as bool?)?.obs ?? false.obs,
       );
       list.add(item);
     }

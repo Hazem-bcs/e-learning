@@ -1,5 +1,5 @@
 import 'package:elearnnig/core/ui_components/info_widget.dart';
-import 'package:elearnnig/view/widget/my_indicator_widget.dart';
+import 'package:elearnnig/view/widget/auth/auth_indicator_widget.dart';
 import 'package:elearnnig/view/widget/on_boarding_widgets/bottom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -85,7 +85,7 @@ class SignupWithEmail extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Password',
                                         obscureText: controllerImp.obscureText,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText(),
                                         validator: (val) {
                                           return validator(
@@ -106,7 +106,7 @@ class SignupWithEmail extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Confirm Password',
                                         obscureText: controllerImp.obscureText2,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText2(),
                                         validator: (val) {
                                           return validator(
@@ -151,7 +151,9 @@ class SignupWithEmail extends StatelessWidget {
                         ),
                       );
                     }),
-                    if (controllerImp.indicator) ...[const MyIndicatorWidget()]
+                    if (controllerImp.indicator) ...[
+                      const AuthIndicatorWidget()
+                    ]
                   ],
                 )),
       ),

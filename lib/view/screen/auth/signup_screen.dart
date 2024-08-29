@@ -10,7 +10,7 @@ import '../../widget/auth/blue_edges_widget.dart';
 import '../../widget/auth/custom_text_field.dart';
 import '../../widget/auth/divider_or_widget.dart';
 import '../../widget/auth/titlewidget.dart';
-import '../../widget/my_indicator_widget.dart';
+import '../../widget/auth/auth_indicator_widget.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -85,7 +85,7 @@ class SignupScreen extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Password',
                                         obscureText: controllerImp.obscureText,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText(),
                                         validator: (val) {
                                           return validator(
@@ -106,7 +106,7 @@ class SignupScreen extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Confirm Password',
                                         obscureText: controllerImp.obscureText2,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText2(),
                                         validator: (val) {
                                           return validator(
@@ -175,7 +175,7 @@ class SignupScreen extends StatelessWidget {
                       );
                     }),
                     if (controllerImp.isLoading) ...[
-                      const MyIndicatorWidget(),
+                      const AuthIndicatorWidget(),
                     ]
                   ],
                 )),

@@ -40,6 +40,6 @@ class ColleagueControllerImp extends ColleagueController {
     MyServices myServices = Get.find();
     myServices.loginSharedPreferences.setString("colleagueId", "$colleagueId");
     myServices.loginSharedPreferences.setString("skipColleagueScreen", "true");
-    Get.offNamed(AppRoutes.homePageScreen);
+    Get.offNamed(AppRoutes.homeScreen);
   }
 }

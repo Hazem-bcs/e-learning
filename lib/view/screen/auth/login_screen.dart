@@ -1,5 +1,5 @@
 import 'package:elearnnig/controller/auth/login_controller.dart';
-import 'package:elearnnig/view/widget/my_indicator_widget.dart';
+import 'package:elearnnig/view/widget/auth/auth_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -75,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                                         keyboardType: TextInputType.text,
                                         labelText: 'Password',
                                         obscureText: controllerImp.obscureText,
-                                        onTap: () =>
+                                        onTapSuffixIcon: () =>
                                             controllerImp.changeObscureText(),
                                         validator: (val) {
                                           return validator(
@@ -139,7 +139,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 );
               }),
-              if (controllerImp.isLoading) ...[const MyIndicatorWidget()]
+              if (controllerImp.isLoading) ...[const AuthIndicatorWidget()]
             ],
           ),
         ),

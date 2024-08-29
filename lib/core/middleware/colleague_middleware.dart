@@ -13,7 +13,7 @@ class ColleagueMiddleware extends GetMiddleware {
   RouteSettings? redirect(String? route) {
     if (myServices.loginSharedPreferences.getString("skipColleagueScreen") ==
         "true") {
-      return const RouteSettings(name: AppRoutes.homePageScreen);
+      return const RouteSettings(name: AppRoutes.homeScreen);
     }
     return null;
   }
